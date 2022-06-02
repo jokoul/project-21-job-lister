@@ -74,4 +74,71 @@ class Job
         return $row;
     }
 
+    //Create Job
+    public function create($data)
+    {
+        //prepare a SQL query
+        $this->db->query("INSERT INTO jobs (category_id,company,job_title,`description`,salary,`location`,contact_user,contact_email) VALUES (:category_id, :company, :job_title, :description, :salary, :location, :contact_user, :contact_email)");//next is to bind all the placeholder
+        //Bind Data with placeholder
+        $this->db->bind(':category_id', $data['category_id']);
+        $this->db->bind(':company', $data['company']);
+        $this->db->bind(':job_title', $data['job_title']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':location', $data['location']);
+        $this->db->bind(':salary', $data['salary']);
+        $this->db->bind(':contact_user', $data['contact_user']);
+        $this->db->bind(':contact_email', $data['contact_email']);
+        //Execute the query
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+
+        }
+    }
+
+    //Delete Job
+    public function delete($id)
+    {
+        //Insert Query
+        $this->db->query("DELETE FROM jobs WHERE id = $id");
+        //Execute query now
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //Update Job
+    public function update($id, $data)
+    {
+        //Insert Query
+        $this->db->query("UPDATE jobs
+                        SET
+                        category_id = :category_id,
+                        job_title = :job_title,
+                        company = :company,
+                        description = :description,
+                        location = :location,
+                        salary = :salary,
+                        contact_user = :contact_user,
+                        contact_email = :contact_email
+                        WHERE id = $id");
+        //Bind Data
+        $this->db->bind(':category_id', $data['category_id']);
+        $this->db->bind(':job_title', $data['job_title']);
+        $this->db->bind(':company', $data['company']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':location', $data['location']);
+        $this->db->bind(':salary', $data['salary']);
+        $this->db->bind(':contact_user', $data['contact_user']);
+        $this->db->bind(':contact_email', $data['contact_email']);
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

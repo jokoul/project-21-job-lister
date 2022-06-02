@@ -45,7 +45,7 @@
 
 /*NAV+JUMBO*/
 nav {
-  background-color: var(--bs-teal);
+  background-color: #20c997;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.9);
@@ -79,6 +79,13 @@ body {
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+}
+/*JOB LISTS*/
+.jobList {
+  margin-bottom: 14rem;
+}
+.crudBtn {
+  margin-bottom: 8rem;
 }
 
 /*FOOTER*/

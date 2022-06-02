@@ -18,7 +18,7 @@
         </form>
     </div>
     
-    <div>
+    <div class="jobList">
         <h2 class="my-3"><?php echo $title; ?></h2>
         <?php foreach($jobs as $job): ?>
         <div class="row mt-1">
