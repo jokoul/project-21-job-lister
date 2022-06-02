@@ -44,5 +44,8 @@
                 </div>
             </div>
         </nav>
+        
+        <!--TO RUN displayMessage in helpers file-->
+        <?php displayMessage(); ?>
 
         <!-- WE DON'T add an ending body and html tag because this is the header this two tag will be inside the footer -->

@@ -6,6 +6,15 @@ include_once 'config/init.php';
 //Initiate Job class to use its properties and methods
 $job = new Job;
 
+if(isset($_POST['del_id'])){
+    $del_id = $_POST['del_id'];
+    if($job->delete($del_id)){
+        redirect('index.php', 'Job Deleted', 'success');
+    }else{
+        redirect('index.php', 'Job Not Deleted', 'error');
+    }
+}
+
 //Initiate Template class by defining frontpage as an instance object.
 $template = new Template('templates/job-single.php');//take as parameter the path to the template we want
 

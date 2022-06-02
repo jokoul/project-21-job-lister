@@ -15,6 +15,15 @@
     <br>
     <br>
     <a class="btn btn-outline-primary" href="index.php">Go Back</a>
+    <br>
+    <br>
+    <div class="bg-light p-3 crudBtn">
+        <a href="edit.php?id=<?php echo $job->id; ?>" class="btn btn-outline-secondary">Edit</a>
+        <form style="display:inline;" method="post" action="job.php">
+            <input type="hidden" name="del_id" value="<?php echo $job->id; ?>">
+            <input type="submit" name="submit" class="btn btn-outline-danger" value="Delete">
+        </form>
+    </div>
 </div>
 <!-- 
 <br>
