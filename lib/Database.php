@@ -10,7 +10,7 @@ class Database
 
     private $dbh;//Database Handler
     private $error;
-    private $stmt;//statement SQL
+    private $stmt;//statement PDO (PHP internal library)
     private $charset = "utf8mb4";
 
     public function __construct()

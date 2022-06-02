@@ -3,41 +3,34 @@
 <!--JUMBOTRON-->
 <main class="container">
     <div class="bg-light p-5 rounded">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-        <a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs »</a>
+        <h1>Find Your Job</h1>
+        <form action="index.php" method="GET">
+            <select name="category" class="form-control">
+                <option value="0">Choose Category</option>
+                <?php foreach($categories as $category): ?>
+                    <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+                <?php endforeach; ?>
+            </select>
+            <br>
+            <div class="text-center">
+                <input type="submit" class="btn btn-lg btn-success" value="Find">
+            </div>
+        </form>
     </div>
-
-    <div><?php 
     
-    ?></div>
-
-    <div class="row mt-5">
-        <div class="col-md-10">
-            <h4>Subheading</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <div>
+        <h2 class="my-3"><?php echo $title; ?></h2>
+        <?php foreach($jobs as $job): ?>
+        <div class="row mt-1">
+            <div class="col-md-10">
+                <h3><?php echo $job->job_title ?></h3>
+                <p><?php echo $job->description ?></p>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-secondary" href="job.php?id=<?php echo $job->id; ?>">View</a>
+            </div>
         </div>
-        <div class="col-md-2">
-            <a class="btn btn-secondary" href="#">View</a>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-10">
-            <h4>Subheading</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="col-md-2">
-            <a class="btn btn-secondary" href="#">View</a>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-10">
-            <h4>Subheading</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="col-md-2">
-            <a class="btn btn-secondary" href="#">View</a>
-        </div>
+        <?php endforeach; ?>
     </div>
 </main>
 

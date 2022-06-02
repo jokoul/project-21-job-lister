@@ -1,8 +1,8 @@
-# project-21-job-lister
+# project-22-job-lister
 
 ## Description
 
-I achieve this job lister website using PHP OOP (Object-Oriented Programming) and MySQL databse which is a database management system (DBMS).
+I achieve this dynamical job search and posting website using PHP OOP (Object-Oriented Programming) and MySQL databse which is a database management system (DBMS).
 
 ## Stack
 
