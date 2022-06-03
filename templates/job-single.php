@@ -3,8 +3,10 @@
 <div class="mt-5 pt-5 container">
     <h1 class="page-header"><?php echo $job->job_title; ?></h1>
     <p>Location : <strong><?php echo $job->location; ?></strong></p>
-    <small class="me-5">Published on : <strong><?php echo $job->post_date; ?></strong></small>
-    <small>Posted by : <strong><?php echo $job->contact_user; ?></strong></small>
+    <div class="d-flex flex-column flex-md-row">
+        <small class="me-5">Published on : <strong><?php echo $job->post_date; ?></strong></small>
+        <small>Posted by : <strong><?php echo $job->contact_user; ?></strong></small>
+    </div>
     <hr>
     <p><?php echo $job->description; ?></p>
     <ul class="list-group">

@@ -40,7 +40,7 @@ class Job
     public function getByCategory($category)
     {
         $this->db->query("SELECT jobs.*, categories.name AS cname
-                        FROM Jobs
+                        FROM jobs
                         INNER JOIN categories
                         ON jobs.category_id = categories.id
                         WHERE jobs.category_id = $category
